@@ -1,0 +1,4 @@
+rootProject.name='Koltin'
+include ':app'
+include ':learning:dagger'
+include ':features:onboarding'
