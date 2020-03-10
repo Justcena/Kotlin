@@ -5,8 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import ir.cena.dagger.di.DaggerLearningComponent
 import ir.cena.dagger.di.LearningComponent
+import javax.inject.Inject
+import javax.inject.Named
 
 class DaggerMainActivity : AppCompatActivity() {
+
+    @Inject
+    @field:Named("SafePref for Sina")
+    lateinit var safePref: SafePref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,14 +20,17 @@ class DaggerMainActivity : AppCompatActivity() {
         Log.d("Dagger", "Dagger Main Activity")
         val component: LearningComponent =
             DaggerLearningComponent.builder().setContext(this).build()
-        val sinaSafePref = component.getSafePrefSina()
-        val dinaSafePref = component.getSafePrefDina()
+        component.mainACtivityInject(this)
+        safePref.put("keys", "Sina")
 
-        sinaSafePref.put("keyS", "Sina")
-        dinaSafePref.put("keyD", "Dina")
-        val sinaValue = sinaSafePref.get("keyS", "")
-        val dinaValue = dinaSafePref.get("keyD", "")
-        Log.d("DaggerMainActivity", "Value is $sinaValue")
-        Log.d("DaggerMainActivity", "Value is $dinaValue")
+//        val sinaSafePref = component.getSafePrefSina()
+//        val dinaSafePref = component.getSafePrefDina()
+//
+//        sinaSafePref.put("keyS", "Sina")
+//        dinaSafePref.put("keyD", "Dina")
+//        val sinaValue = sinaSafePref.get("keyS", "")
+//        val dinaValue = dinaSafePref.get("keyD", "")
+//        Log.d("DaggerMainActivity", "Value is $sinaValue")
+//        Log.d("DaggerMainActivity", "Value is $dinaValue")
     }
 }

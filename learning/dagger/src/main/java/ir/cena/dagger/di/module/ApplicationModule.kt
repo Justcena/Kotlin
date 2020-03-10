@@ -16,7 +16,7 @@ class ApplicationModule {
     @Provides
     fun getZsecureSina(): Zsecure {
         val zsecure = Zsecure()
-        zsecure.Z_KEY = "Z_KEY is changed to Sina"
+        zsecure.Z_KEY = "Z_KEY is Sina"
         return zsecure
     }
 
@@ -24,7 +24,7 @@ class ApplicationModule {
     @Provides
     fun getZsecureDina(): Zsecure {
         val zsecure = Zsecure()
-        zsecure.Z_KEY = "Z_KEY is changed to Dina"
+        zsecure.Z_KEY = "Z_KEY is Dina"
         return zsecure
     }
 
