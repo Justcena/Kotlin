@@ -7,10 +7,7 @@ class Zcript @Inject constructor() {
 
     var zsecure: Zsecure? = null
 
-    fun encrpt(str: String): String {
-        return str
-    }
-
+    fun encrpt(str: String) = str
 
     fun decrypt(str: String): String {
         Log.d("Decrypt", zsecure?.Z_IV)
@@ -18,6 +15,7 @@ class Zcript @Inject constructor() {
     }
 
     @Inject
-    fun injectZsecure(zsecure: Zsecure)  {
-        this.zsecure = zsecure}
+    fun injectZsecure(zsecure: Zsecure) {
+        this.zsecure = zsecure
+    }
 }
