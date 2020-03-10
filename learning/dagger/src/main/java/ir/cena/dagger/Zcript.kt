@@ -10,7 +10,7 @@ class Zcript @Inject constructor(val zsecure: Zsecure) {
 
 
     fun decrypt(str: String): String {
-        Log.d("decrypt", "${zsecure.Z_IV}")
+        Log.d("Decrypt", "${zsecure.Z_IV}")
         return str
     }
 }
