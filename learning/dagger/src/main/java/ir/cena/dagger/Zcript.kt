@@ -10,7 +10,7 @@ class Zcript @Inject constructor() {
     fun encrpt(str: String) = str
 
     fun decrypt(str: String): String {
-        Log.d("Decrypt", zsecure?.Z_IV)
+        Log.d("Decrypt", zsecure?.Z_KEY)
         return str
     }
 

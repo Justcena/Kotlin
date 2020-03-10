@@ -8,5 +8,9 @@ import ir.cena.dagger.Zsecure
 class ApplicationModule {
 
     @Provides
-    fun getsZsecure() = Zsecure()
+    fun getZsecure(): Zsecure {
+        val zsecure = Zsecure()
+        zsecure.Z_KEY = "Z_KEY is changed"
+        return zsecure
+    }
 }
