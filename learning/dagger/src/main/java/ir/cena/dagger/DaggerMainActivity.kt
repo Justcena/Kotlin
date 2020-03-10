@@ -15,12 +15,13 @@ class DaggerMainActivity : AppCompatActivity() {
     lateinit var safePref: SafePref
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (applicationContext as DagerApplication).daggerComponent.mainACtivityInject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dagger_main)
         Log.d("Dagger", "Dagger Main Activity")
-        val component: LearningComponent =
-            DaggerLearningComponent.builder().setContext(this).build()
-        component.mainACtivityInject(this)
+//        val component: LearningComponent =
+//            DaggerLearningComponent.builder().setContext(this).build()
+//        component.mainACtivityInject(this)
         safePref.put("keys", "Sina")
 
 //        val sinaSafePref = component.getSafePrefSina()
