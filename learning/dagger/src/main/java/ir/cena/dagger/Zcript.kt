@@ -5,8 +5,7 @@ import javax.inject.Inject
 
 class Zcript @Inject constructor() {
 
-    @Inject
-    lateinit var zsecure: Zsecure
+    var zsecure: Zsecure? = null
 
     fun encrpt(str: String): String {
         return str
@@ -14,7 +13,11 @@ class Zcript @Inject constructor() {
 
 
     fun decrypt(str: String): String {
-        Log.d("Decrypt", zsecure.Z_IV)
+        Log.d("Decrypt", zsecure?.Z_IV)
         return str
     }
+
+    @Inject
+    fun injectZsecure(zsecure: Zsecure)  {
+        this.zsecure = zsecure}
 }
