@@ -15,7 +15,6 @@ interface LearningComponent {
 
     @Component.Builder
     interface Builder {
-
         @BindsInstance
         fun setContext(context: Context): Builder
 
