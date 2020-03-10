@@ -14,9 +14,14 @@ class DaggerMainActivity : AppCompatActivity() {
         Log.d("Dagger", "Dagger Main Activity")
         val component: LearningComponent =
             DaggerLearningComponent.builder().setContext(this).build()
-        val safePref = component.getSafePref()
-        safePref.put("key", "arcademy")
-        val value = safePref.get("key", "")
-        Log.d("DaggerMainActivity", "Value is $value")
+        val sinaSafePref = component.getSafePrefSina()
+        val dinaSafePref = component.getSafePrefDina()
+
+        sinaSafePref.put("keyS", "Sina")
+        dinaSafePref.put("keyD", "Dina")
+        val sinaValue = sinaSafePref.get("keyS", "")
+        val dinaValue = dinaSafePref.get("keyD", "")
+        Log.d("DaggerMainActivity", "Value is $sinaValue")
+        Log.d("DaggerMainActivity", "Value is $dinaValue")
     }
 }

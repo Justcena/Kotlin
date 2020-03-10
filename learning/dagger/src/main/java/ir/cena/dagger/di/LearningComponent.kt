@@ -6,12 +6,19 @@ import dagger.Component
 import ir.cena.dagger.SafePref
 import ir.cena.dagger.Zcript
 import ir.cena.dagger.di.module.ApplicationModule
+import javax.inject.Named
 
 @Component(modules = [ApplicationModule::class])
 interface LearningComponent {
 
+//    @Named("Zcrypt for Sina")
     fun getZcript(): Zcript
-    fun getSafePref(): SafePref
+
+    @Named("SafePref for Sina")
+    fun getSafePrefSina(): SafePref
+
+    @Named("SafePref for Dina")
+    fun getSafePrefDina(): SafePref
 
     @Component.Builder
     interface Builder {
