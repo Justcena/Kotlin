@@ -34,7 +34,7 @@ class FirstActivity : AppCompatActivity() {
         setContentView(R.layout.activity_first)
 
         DaggerActivityComponent.builder()
-            .learningComponent((applicationContext as ir.cena.dagger.DaggerApplication).daggerComponent)
+            .getLearningComponent((applicationContext as ir.cena.dagger.DaggerApplication).daggerComponent)
             .build()
             .mainACtivityInject(this)
 //        val component: LearningComponent =

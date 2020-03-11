@@ -29,7 +29,7 @@ class SecondActivty : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         DaggerActivityComponent.builder()
-            .learningComponent((applicationContext as DaggerApplication).daggerComponent).build()
+            .getLearningComponent((applicationContext as DaggerApplication).daggerComponent).build()
             .secondACtivityInject(this)
 
         safePrefSina.put("keys", "Sina")

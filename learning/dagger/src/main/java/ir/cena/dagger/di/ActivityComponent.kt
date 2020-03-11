@@ -11,4 +11,10 @@ import ir.cena.dagger.di.scope.ActivityScope
 interface ActivityComponent {
     fun mainACtivityInject(activity: FirstActivity)
     fun secondACtivityInject(activity: SecondActivty)
+
+    @Component.Builder
+    interface Builder {
+        fun getLearningComponent(learningComponent: LearningComponent): Builder
+        fun build(): ActivityComponent
+    }
 }
