@@ -31,7 +31,7 @@ class SecondActivty : AppCompatActivity() {
 //            .learningComponent((applicationContext as DaggerApplication).daggerComponent).build()
 //            .secondACtivityInject(this)
 
-        (applicationContext as DaggerApplication).daggerComponent.getActivityComponent().secondACtivityInject(this)
+        (applicationContext as DaggerApplication).daggerComponent.getActivityComponent().build().secondACtivityInject(this)
         safePrefSina.put("keys", "Sina")
         safePrefDina.put("keys", "Dina")
 

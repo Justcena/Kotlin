@@ -31,7 +31,7 @@ class FirstActivity : AppCompatActivity() {
 //        (applicationContext as DagerApplication).daggerComponent.mainACtivityInject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
-        (applicationContext as DaggerApplication).daggerComponent.getActivityComponent().mainACtivityInject(this)
+        (applicationContext as DaggerApplication).daggerComponent.getActivityComponent().build().mainACtivityInject(this)
 
 //        DaggerActivityComponent.builder()
 //            .learningComponent((applicationContext as ir.cena.dagger.DaggerApplication).daggerComponent)

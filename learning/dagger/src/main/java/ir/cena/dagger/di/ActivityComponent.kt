@@ -13,9 +13,9 @@ interface ActivityComponent {
     fun mainACtivityInject(activity: FirstActivity)
     fun secondACtivityInject(activity: SecondActivty)
 
-//    @Component.Builder
-//    interface Builder {
+    @Component.Builder
+    interface Builder {
 //        fun getLearningComponent(learningComponent: LearningComponent): Builder
-//        fun build(): ActivityComponent
-//    }
+        fun build(): ActivityComponent
+    }
 }

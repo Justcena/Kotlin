@@ -15,7 +15,7 @@ import javax.inject.Singleton
 @Component(modules = [ZcryptModule::class, ZsecureModule::class])
 interface LearningComponent {
 
-    fun getActivityComponent(): ActivityComponent
+    fun getActivityComponent(): ActivityComponent.Builder
 //    @Named("Zcrypt for Sina")
 //    fun getZcyptSina(): Zcript
 //
