@@ -4,7 +4,7 @@ import android.app.Application
 import ir.cena.dagger.di.DaggerLearningComponent
 import ir.cena.dagger.di.LearningComponent
 
-class DagerApplication : Application() {
+class DaggerApplication : Application() {
     lateinit var daggerComponent: LearningComponent
 
     override fun onCreate() {
