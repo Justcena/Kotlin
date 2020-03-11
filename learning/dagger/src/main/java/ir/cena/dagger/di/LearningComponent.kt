@@ -8,7 +8,9 @@ import ir.cena.dagger.SafePref
 import ir.cena.dagger.Zcript
 import ir.cena.dagger.di.module.ApplicationModule
 import javax.inject.Named
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [ApplicationModule::class])
 interface LearningComponent {
 

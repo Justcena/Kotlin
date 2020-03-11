@@ -12,7 +12,11 @@ class DaggerMainActivity : AppCompatActivity() {
 
     @Inject
     @field:Named("SafePref for Sina")
-    lateinit var safePref: SafePref
+    lateinit var safePref1: SafePref
+
+    @Inject
+    @field:Named("SafePref for Sina")
+    lateinit var safePref2: SafePref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as DagerApplication).daggerComponent.mainACtivityInject(this)
@@ -22,7 +26,9 @@ class DaggerMainActivity : AppCompatActivity() {
 //        val component: LearningComponent =
 //            DaggerLearningComponent.builder().setContext(this).build()
 //        component.mainACtivityInject(this)
-        safePref.put("keys", "Sina")
+        safePref1.put("keys", "Sina")
+
+        Log.d("DaggerMainActivity", "$safePref1 ?? $safePref2")
 
 //        val sinaSafePref = component.getSafePrefSina()
 //        val dinaSafePref = component.getSafePrefDina()

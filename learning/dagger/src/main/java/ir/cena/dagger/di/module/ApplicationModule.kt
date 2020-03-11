@@ -8,6 +8,7 @@ import ir.cena.dagger.Zcript
 import ir.cena.dagger.Zsecure
 import ir.cena.dagger.di.qualifire.CustomQaulifireName
 import javax.inject.Named
+import javax.inject.Singleton
 
 @Module
 class ApplicationModule {
@@ -44,6 +45,7 @@ class ApplicationModule {
         return zcript
     }
 
+    @Singleton
     @Named("SafePref for Sina")
     @Provides
     fun getSafePrefSina(context: Context, @Named("Zcrypt for Sina") zcript: Zcript): SafePref =
