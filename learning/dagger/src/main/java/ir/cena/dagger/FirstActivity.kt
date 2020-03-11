@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import ir.cena.dagger.di.DaggerActivityComponent
 import kotlinx.android.synthetic.main.activity_first.*
 import javax.inject.Inject
 import javax.inject.Named
@@ -32,11 +31,12 @@ class FirstActivity : AppCompatActivity() {
 //        (applicationContext as DagerApplication).daggerComponent.mainACtivityInject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
+        (applicationContext as DaggerApplication).daggerComponent.getActivityComponent().mainACtivityInject(this)
 
-        DaggerActivityComponent.builder()
-            .getLearningComponent((applicationContext as ir.cena.dagger.DaggerApplication).daggerComponent)
-            .build()
-            .mainACtivityInject(this)
+//        DaggerActivityComponent.builder()
+//            .learningComponent((applicationContext as ir.cena.dagger.DaggerApplication).daggerComponent)
+//            .build()
+//            .mainACtivityInject(this)
 //        val component: LearningComponent =
 //            DaggerLearningComponent.builder().setContext(this).build()
 //        component.mainACtivityInject(this)

@@ -15,13 +15,14 @@ import javax.inject.Singleton
 @Component(modules = [ZcryptModule::class, ZsecureModule::class])
 interface LearningComponent {
 
-    @Named("Zcrypt for Sina")
-    fun getZcyptSina(): Zcript
-
-    @Named("Zcrypt for Dina")
-    fun getZcyptDina(): Zcript
-
-    fun getContext(): Context
+    fun getActivityComponent(): ActivityComponent
+//    @Named("Zcrypt for Sina")
+//    fun getZcyptSina(): Zcript
+//
+//    @Named("Zcrypt for Dina")
+//    fun getZcyptDina(): Zcript
+//
+//    fun getContext(): Context
 
     @Component.Builder
     interface Builder {

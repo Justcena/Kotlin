@@ -3,7 +3,6 @@ package ir.cena.dagger
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import ir.cena.dagger.di.DaggerActivityComponent
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -28,10 +27,11 @@ class SecondActivty : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        DaggerActivityComponent.builder()
-            .getLearningComponent((applicationContext as DaggerApplication).daggerComponent).build()
-            .secondACtivityInject(this)
+//        DaggerActivityComponent.builder()
+//            .learningComponent((applicationContext as DaggerApplication).daggerComponent).build()
+//            .secondACtivityInject(this)
 
+        (applicationContext as DaggerApplication).daggerComponent.getActivityComponent().secondACtivityInject(this)
         safePrefSina.put("keys", "Sina")
         safePrefDina.put("keys", "Dina")
 
