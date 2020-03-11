@@ -18,7 +18,11 @@ class Zcript @Inject constructor() {
     fun decrypt(str: String) = String(Base64.decode(str, Base64.DEFAULT))
 
     @Inject
-    fun injectZsecure(@Named("Zsecure for Dina") zsecure: Zsecure) {
+    fun injectZsecureSina(@Named("Zsecure for Sina") zsecure: Zsecure) {
+        this.zsecure = zsecure
+    }
+    @Inject
+    fun injectZsecureDina(@Named("Zsecure for Dina") zsecure: Zsecure) {
         this.zsecure = zsecure
     }
 }
