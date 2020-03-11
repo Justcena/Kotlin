@@ -2,16 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.cena.dagger">
 
-    <application android:name=".DagerApplication">
+    <application android:name=".DaggerApplication">
+        <activity android:name=".SecondActivty"></activity>
         <activity
-            android:name=".DaggerMainActivity"
-            android:screenOrientation="portrait"
-
-            >
+            android:name=".FirstActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="action.dagger.open" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
